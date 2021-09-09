@@ -5,6 +5,7 @@ module STUN;
 export {
 	const methodtype = {
 		[0x01] = "BINDING",
+		[0x02] = "SECRETREQUEST",
 		[0x03] = "ALLOCATE",
 		[0x04] = "REFRESH",
 		[0x06] = "SEND",
@@ -15,6 +16,10 @@ export {
 		[0x0B] = "CONNECTIONBIND",
 		[0x0C] = "CONNECTIONATTEMPT",
 		[0x080] = "GOOG-PING",
+		[0x0101] = "BINDINGRESPONSE",
+		[0x0102] = "SECRETRESPONSE",
+		[0x0111] = "BINDINGERROR",
+		[0x0112] = "SECRETERROR",
 	} &default = function(n: count): string { return fmt("unknown-methodtype-%d", n); };
 
 	const classtype = {
@@ -26,10 +31,16 @@ export {
 
 	const attrtype = {
 		[0x0001] = "MAPPED_ADDRESS",
+		[0x0002] = "RESPONSE_ADDRESS",
+		[0x0003] = "CHANGE_REQUEST"
+		[0x0004] = "SOURCE_ADDRESS",
+		[0x0005] = "CHANGED_ADDRESS",
 		[0x0006] = "USERNAME",
+		[0x0007] = "PASSWORD",
 		[0x0008] = "MESSAGE_INTEGRITY",
 		[0x0009] = "ERROR_CODE",
 		[0x000A] = "UNKNOWN_ATTRIBUTES",
+		[0x000B] = "REFLECTED_FROM",
 		[0x000C] = "CHANNEL_NUMBER",
 		[0x000D] = "LIFETIME",
 		[0x0012] = "XOR_PEER_ADDRESS",
