@@ -12,6 +12,7 @@ type AddrFamily = enum { IPv4 = 0x01, IPv6 = 0x02 };
 # https://www.iana.org/assignments/stun-parameters/stun-parameters.xhtml
 type Method = enum {
 	BINDING = 0x01,
+	SECRETREQUEST = 0x02,
 	ALLOCATE = 0x03,
 	REFRESH = 0x04,
 	SEND = 0x06,
@@ -22,6 +23,10 @@ type Method = enum {
 	CONNECTIONBIND = 0x0B,
 	CONNECTIONATTEMPT = 0x0C,
 	GOOGPING = 0x080,
+	BINDINGRESPONSE = 0x0101,
+	SECRETRESPONSE = 0x0102,
+	BINDINGERROR = 0x0111,
+	SECRETERROR = 0x0112,
 	};
 
 type Class = enum {
@@ -34,10 +39,16 @@ type Class = enum {
 # https://www.iana.org/assignments/stun-parameters/stun-parameters.xhtml
 type AttrType = enum {
 	MAPPED_ADDRESS = 0x0001,
+	RESPONSE_ADDRESS = 0x0002,
+	CHANGE_REQUEST = 0x0003,
+	SOURCE_ADDRESS = 0x0004,
+	CHANGED_ADDRESS = 0x0005,
 	USERNAME = 0x0006,
+	PASSWORD = 0x0007,
 	MESSAGE_INTEGRITY = 0x0008,
 	ERROR_CODE = 0x0009,
 	UNKNOWN_ATTRIBUTES = 0x000A,
+	REFLECTED-FROM = 0x000B,
 	CHANNEL_NUMBER = 0x000C,
 	LIFETIME = 0x000D,
 	XOR_PEER_ADDRESS = 0x0012,
