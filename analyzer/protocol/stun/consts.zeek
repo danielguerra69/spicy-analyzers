@@ -32,7 +32,7 @@ export {
 	const attrtype = {
 		[0x0001] = "MAPPED_ADDRESS",
 		[0x0002] = "RESPONSE_ADDRESS",
-		[0x0003] = "CHANGE_REQUEST"
+		[0x0003] = "CHANGE_REQUEST",
 		[0x0004] = "SOURCE_ADDRESS",
 		[0x0005] = "CHANGED_ADDRESS",
 		[0x0006] = "USERNAME",
